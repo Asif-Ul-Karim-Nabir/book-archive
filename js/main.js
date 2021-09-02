@@ -4,26 +4,33 @@ const loadSearchResult = () => {
     const searchText = searchInput.value;
     // clear input feild
     searchInput.value = '';
+    if (searchText === '') {
+
+    }
     // get books url 
-    const url = `https://openlibrary.org/search.json?q=${searchText}`;
-    fetch(url)
-        .then(res => res.json())
-        .then(data => displayBooksResult(data.docs))
+    else {
+        const url = `https://openlibrary.org/search.json?q=${searchText}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => displayBooksResult(data.docs))
+    }
 }
 // display books result 
 const displayBooksResult = (data) => {
     // console.log(data);
     const bookContainer = document.getElementById('books');
     // clear previous serach result 
-    bookContainer.textContent = '';
+    bookContainer.textContent = ''
     // total book calculations
     const totalBook = document.getElementById('total-book');
     const arrayBook = []
+    if (!data) {
+
+    }
     // forEach arrow function
-    data.forEach(book => {
+    data?.forEach(book => {
         arrayBook.push(book)
         totalBook.innerText = arrayBook.length - 1;
-        console.log(book);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
