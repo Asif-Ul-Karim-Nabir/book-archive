@@ -4,7 +4,7 @@ const loadSearchResult = () => {
     const searchText = searchInput.value;
     // clear input feild
     searchInput.value = '';
-    const url = `http://openlibrary.org/search.json?q=${searchText}`
+    const url = `https://openlibrary.org/search.json?q=${searchText}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayBooksResult(data.docs))
