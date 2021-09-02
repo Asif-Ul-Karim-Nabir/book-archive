@@ -16,11 +16,21 @@
 
     </header>
     <main>
-        <h1 class="text-center mt-4 mb-3">Search For Your Favourite Book Name</h1>
-        <div class="input-group mb-3 w-50 mx-auto">
-            <input id="input-feild" type="text" class="form-control" placeholder="Search For Your Favourite Book Name">
+        <p class="fs-1 text-center text-success mt-4 mb-3">Search Your Favourite Book</p>
+        <!-- input and button area  -->
+        <!-- input feild  -->
+        <div class="input-group mb-3 m w-50 mx-auto">
+            <input id="input-feild" type="text" class="form-control" placeholder="Search The Book You Want">
+            <!-- button for get search result  -->
             <button onclick="loadSearchResult()" class="btn btn-outline-secondary" type="button"
                 id="button">Button</button>
+        </div>
+        <div class="fs-3 text-center text-success">
+            <p>Total Book Found : <span id="total-book">0</span></p>
+        </div>
+        <!-- (div) book shell for store books  -->
+        <div id="books" class="row row-cols-1 row-cols-md-3 g-4 w-75 mx-auto mb-4">
+
         </div>
     </main>
     <!-- Bootstrap JS link  -->
